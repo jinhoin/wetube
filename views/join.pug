@@ -3,8 +3,8 @@ extends layouts/main.pug
 
 block content
     .join   
-        .form_container
-            form(action="/join", method="post")
+        .form-container
+            form(action=routes.join, method="post")
                 input(type="text", name="name", placeholder="FULL   name")
                 input(type="email", name="email", placeholder="email")
                 input(type="password", name="password", placeholder="Password")
