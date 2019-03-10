@@ -1,22 +1,42 @@
-export const home = (req, res) => res.render('home', { pageTitle : "Home"});
-export const search = (req, res) => {
-    
-    // step 1 console.log(req.query.turm);
-    // step 2 
-    // const searchingBy = req.query.turm
+import { videos } from "../db";
+import { routes} from "../routes";
 
+export const home = (req, res) => {
+    res.render("home", { pageTitle: "Home", videos });
+};
+export const search = (req, res) => {
+
+    // step 1 console.log(req.query.turm);
+    // step 2  const searchingBy = req.query.turm
     //step 3
     const {             // req.query.turm과 같다
-        query : {turm : searchingBy}
+        query: { turm: searchingBy }
     } = req;
 
     res.render(
-    'search', {
-    searchingBy
-    });
+        'search', {
+            pageTitle: "Search",
+            searchingBy, videos
+        });
+};
+export const videoDetail = (req, res) =>  res.render("videoDetail", { pageTitle: "Video Detail" });
+export const videose = (req, res) => res.send('vidoes');
+export const getUpload = (req, res) => {
+    res.render('upload', { pageTitle: 'uplo213132ad' });
 }
-export const videoDetail = (req, res) => res.send('videoDetail');
-export const videos = (req, res) => res.send('vidoes');
-export const upload = (req, res) => res.send('vidoes');
+// export const postUpload = (req, res) => {
+//     console.log(req.body);
+    
+//     const {
+//         body: {
+//             file, title, description
+//         }
+//     } = req;
+//     // To Do : upload and ave video
+//     //  fake id
+//     res.redirect(routes.videoDetail(324393));
+
+// };
+
 export const editVideo = (req, res) => res.send('editVideo');
 export const deleteVideo = (req, res) => res.send('deleteVideo');

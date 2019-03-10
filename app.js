@@ -27,6 +27,8 @@ app.use(helmet());
 //보안에 초점
 app.use(cookeyParser());
 // 쿠키를 전달 받아서 사용할수 있드록 해주는 미들웨어 사용자 인증 에서 사용
+
+// bodyparser 로 post에 넘긴값을 체크할수잇다
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 //request form 값을 체크하는것 

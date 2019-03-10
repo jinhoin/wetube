@@ -2,7 +2,7 @@ extends layouts/main.pug
 
 
 block content
-       .editProfile   
+    .editProfile   
         .form-container
             form(action=routes.editProfile, method="post")
                 label(for="avata") Avata
@@ -13,3 +13,4 @@ block content
                 input(type="password", name="password", placeholder="Password")
                 input(type="password", name="password2", placeholder="Verify Password")
                 input(type="submit", value="Update Profile")
+                a.form-container(href="loutes.changePassword") ChangePassword

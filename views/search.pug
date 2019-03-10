@@ -1,6 +1,15 @@
-extends layouts/main.pug
+extends layouts/main
+include mixins/videoBlock
 
 
 block content
     .seacrh__header
         h3 Seacrching for #{searchingBy}
+    .search__videos
+        each item in videos
+                +videoBlock ({
+                    title:item.title,
+                    view:item.views,
+                    videoFile:item.videoFile
+                
+                })

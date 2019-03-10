@@ -1,0 +1,9 @@
+mixin videoBlock(video = {})
+    //- pug 함수의 일종  객체가  mixin 
+    .video 
+        //- video.videoBlock__thumnail(src=video.videoFile, autoplay=true)
+        a(href=routes.videoDetail(video.id))=video.id
+        video.videoBlock__thumnail(src=video.videoFile, autoplay=false)
+        h4.videoBlock__title=video.title
+        h6.videoBolck__views=video.views
+

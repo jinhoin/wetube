@@ -1,14 +1,21 @@
 header.header
     .header__column
-        i.fab.fa-youtube
+        a(href=routes.home)
+            i.fab.fa-youtube
     .header__column
         form(action=routes.search, method="get")
             input(type="text", placeholder="Search my Term", name="turm")
     .header__column
-
         ul  
-            li  
-                a(href=routes.join) Join   
-                
-            li  
-                a(href=routes.login) Loogin
+            if !user.isAuthenticated
+                li  
+                    a(href=routes.join) Join   
+                li  
+                    a(href=routes.login) Login
+            else
+                li
+                    a(href=`videos${routes.upload}`) Upload 
+                li
+                    a(href=routes.userDetail(user.id)) editProfile 
+                li
+                    a(href=routes.logout) Log Out
