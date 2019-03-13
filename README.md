@@ -19,3 +19,8 @@ Cloning Youtube with Vanilla and NodeJS
   
 
  Markdown All in one
+ 
+
+  - Mongodb  / mongo mongod
+  - npm i mongoose
+  - $ npm i dotenv
