@@ -1,4 +1,4 @@
-import { videos } from "../db";
+// import { videos } from "../db";
 import { routes} from "../routes";
 
 export const home = (req, res) => {
@@ -16,9 +16,10 @@ export const search = (req, res) => {
     res.render(
         'search', {
             pageTitle: "Search",
-            searchingBy, videos
+            searchingBy, 
+            // videos
         });
-};
+};1
 export const videoDetail = (req, res) =>  res.render("videoDetail", { pageTitle: "Video Detail" });
 export const videose = (req, res) => res.send('vidoes');
 export const getUpload = (req, res) => {
