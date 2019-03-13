@@ -1,31 +1,31 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
 
 const VideoSchema = new mongoose.Schema({
     fileUrl: {
         type: String,
-        required: 'File Url is required'
-    },
-    title: {
+        required: "File URL is required"
+      },
+      title: {
         type: String,
-        required: "Title is required"
-    },
-    description: {
+        required: "Tilte is required"
+      },
+      description: String,
+      views: {
         type: Number,
         default: 0
-    },
-    createDate: {
+      },
+      createdAt: {
         type: Date,
         default: Date.now
-    },
-    comments: [
+      },
+      comments: [
         {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: "Comment"
+          type: mongoose.Schema.Types.ObjectId,
+          ref: "Comment"
         }
-    ]
-    // 코멘트 키를 참조할수있게 코멘트 아이디를 배열로가져오는 방법 1과 comment에서 직접 video데이타를 가져올수잇는 방법
-
+      ]
 });
 
+
 const model = mongoose.model("Video", VideoSchema);
-export default model
+export default model;
