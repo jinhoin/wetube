@@ -1,6 +1,6 @@
-import {Mongoose} from 'mongoose';
+import mongoose from 'mongoose';
 
-const VideoSchema = new Mongoose.Schema({
+const VideoSchema = new mongoose.Schema({
     fileUrl: {
         type: String,
         required: "File URL is required"
