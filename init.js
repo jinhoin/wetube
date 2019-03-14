@@ -1,6 +1,6 @@
 import app from "./app";
 import './db'
-import './models/video';
+import './models/Video';
 // env 파일을 설정할수 있음
 import dotenv from "dotenv"
 dotenv.config();

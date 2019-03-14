@@ -1,7 +1,7 @@
 // import { videos } from "../db";
 // db와 연결되잇다 젠작 init.js에서 연결
 import { routes } from "../routes";
-import Video from "../models/Video";
+import Video from "../models/Video.js";
 
 export const home = async(req, res) => {
     const videos = await Video.find({})

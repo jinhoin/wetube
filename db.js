@@ -19,4 +19,4 @@ const handleError = (error) => console.log(`X Error on DB connection ${error}`);
 
 
 db.once('open', handleOpen);
-db.on('error', handleError)
+db.on('error', handleError);
