@@ -6,6 +6,8 @@ block content
     .seacrh__header
         h3 Seacrching for #{searchingBy}
     .search__videos
+        if videos.lenght === 0
+            h5 No videos Fond
         each item in videos
                 +videoBlock ({
                     title:item.title,

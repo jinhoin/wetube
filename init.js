@@ -1,9 +1,12 @@
-import app from "./app";
-import './db'
-import './models/Video';
-// env 파일을 설정할수 있음
 import dotenv from "dotenv"
+import './db'
+
+import app from "./app";
+// env 파일을 설정할수 있음
 dotenv.config();
+import './models/Video';
+import './models/Comment';
+import './models/User';
 
 
 // const PORT = 4000; 없을때는 4000으로 인식가능

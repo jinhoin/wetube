@@ -1,13 +1,13 @@
-import { Mongoose } from "mongoose";
+import mongoose from "mongoose";
 
-const CommentSchema = new Mongoose.Schema({
-    text : {
-        type : String,
-        required : "Test is required"
+const CommentSchema = new mongoose.Schema({
+    text: {
+        type: String,
+        required: "Test is required"
     },
-    createdAt :{
-        type : Date,
-        default : Date.now,
+    createdAt: {
+        type: Date,
+        default: Date.now,
     },
     // video :{
     //     type : Mongoose.Schema.Types.ObjectId,
@@ -16,5 +16,6 @@ const CommentSchema = new Mongoose.Schema({
     // }  외래키 
 })
 
-const model = Mongoose.model('comment', CommentSchema);
-export default model
+const model = mongoose.model('comment', CommentSchema);
+
+export default model;

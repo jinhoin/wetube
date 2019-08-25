@@ -5,12 +5,11 @@ block content
     .editProfile   
         .form-container
             form(action=routes.editProfile, method="post")
-                label(for="avata") Avata
-                input(type="file", name="avatar", placeholder="avata")
-                input(type="text", name="name", placeholder="Name")
-
-                input(type="email", name="email", placeholder="Email")
-                input(type="password", name="password", placeholder="Password")
-                input(type="password", name="password2", placeholder="Verify Password")
-                input(type="submit", value="Update Profile")
-                a.form-container(href="loutes.changePassword") ChangePassword
+              .fileUpload
+                label(for="avatar") Avatar
+                input(type="file", id="avatar", name="avatar")
+            input(type="text", placeholder="Name", name="name")
+            input(type="email", placeholder="Email", name="email")
+            input(type="submit", value="Update Profile")
+        a.form-container__link(href=`/users${routes.changePassword}`)
+            button Change Password 

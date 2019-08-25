@@ -1,28 +1,38 @@
 import express from 'express';
 import routes from "../routes";
 import {
-    videose,
     getUpload,
     postUpload,
     videoDetail,
-    editVideo,
-    deleteVideo
+    getEditVeido,
+    deleteVideo,
+    postEditVideo,
+
 } from "../controllers/videoController.js";
-import { uploadVideo} from "../middlewares"
+import { uploadVideo } from "../middlewares"
 
 
 const videoRouter = express.Router();
 
-videoRouter.get(routes.videos, videose);
+// console.log(routes.editVideo(1122));
+
 // 함수를 실행시켜줘야된다
 
-videoRouter.get(routes.upload, getUpload);
-videoRouter.get(routes.videoDetail(), videoDetail);
 
+// upload
+videoRouter.get(routes.upload, getUpload);
 videoRouter.post(routes.upload, uploadVideo, postUpload);
 
-videoRouter.get(routes.editVideo, editVideo);
-videoRouter.get(routes.deleteVideo, deleteVideo);
+// Video Detail
+videoRouter.get(routes.videoDetail(), videoDetail);
+
+// Edit Video
+videoRouter.get(routes.editVideo(), getEditVeido);
+videoRouter.post(routes.editVideo(), postEditVideo);
+
+
+// Delete Vide
+videoRouter.get(routes.deleteVideo(), deleteVideo);
 
 
 

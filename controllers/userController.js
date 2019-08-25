@@ -1,9 +1,11 @@
+import passport from "passport";
 import routes from "../routes";
+import User from "../models/User"
 
 export const getJoin = (req, res) => {
     res.render('Join', { pageTitle: "join", })
 };
-export const postJoin = (req, res) => {
+export const postJoin = async (req, res) => {
     // console.log(req.body);
     const {
         body: { name, email, password, password2 }
@@ -14,19 +16,27 @@ export const postJoin = (req, res) => {
     } else {
         // To Do: Register user
         // To Do : Log user in
+        try {
+            // const user = await User.create({
+            const user = await User({
+                name,
+                email
+            });
+            await User.register(user, password);
+            next();
+        } catch (error) {
+            console.log(error);
+        }
         res.redirect(routes.home)
     }
-}
+};
 
 export const getLogin = (req, res) => res.render('login', { pageTitle: "login" });
-
-export const postLogin = function (req, res) {
-    const {
-        body: { email, password, password2 }
-    } = req;
-    res.redirect(routes.home);
-
-};
+// 설치해준 stragey 이름
+export const postLogin = passport.authenticate('local', {
+    failureRedirect: routes.login,
+    successRedirect: routes.home,
+});
 
 
 
